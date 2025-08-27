@@ -1,14 +1,13 @@
-.seccion-1{
+.seccion-1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 2rem;
-
     margin-top: 2rem;
-
     justify-items: center;
 }
-.item{
+
+.item {
     width: 20rem;
     height: 20rem;
     background-color: darkred;
@@ -20,11 +19,33 @@
     gap: 2rem;
 
     margin-top: 2rem;
-
     justify-items: center;
 }
 
-.item Img{
-    width: 100%;
 
+.item Img {
+    width: 100%;
+}
+
+
+.titulo1 {
+    font-size: 24px;
+    color: aliceblue;
+    margin-left: 6rem;
+}
+
+.img {
+    width: 192px;
+    height: 192px;
+    border-radius: 25%;
+    margin: auto;
+    margin-top: 18px;
+    display: flex;
+}
+
+.descripcion {
+    margin-top: 18px;
+    font-size: 22.8px;
+    color: aliceblue;
+    text-align: center;
 }
