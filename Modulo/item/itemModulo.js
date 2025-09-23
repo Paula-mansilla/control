@@ -1,22 +1,36 @@
-export function item(titulo, urlImg) {
-   
 
-    let item = document.createElement("div");
+import { guardarProducto, obtenerProductos } from "../../control/miLocalStorange.js";
+import { listaDeCompras } from "../../main.js";
+
+export function item(id,titulo,urlImg,description,precio){
+
+    let item = document.createElement('div');
     item.className = "item";
 
-    let img = document.createElement("img");
+    let titu = document.createElement('titu');
+    titu.textContent = titulo;
+    item.appendChild(titu);
+    
+    let img = document.createElement('img');
     img.src = urlImg;
-
-    let tituloEl = document.createElement("p");
-    tituloEl.textContent = titulo;
-
     item.appendChild(img);
-    item.appendChild(tituloEl);
 
-    item.addEventListener("click", () => {
-        item.classList.add("verde");
-        let header = document.querySelector(".header");
-        header.classList.add('ocultar');
+    let p = document.createElement('p');
+    p.textContent = description;
+    item.appendChild(p);
+
+    let span = document.createElement('span');
+    span.textContent = "$" + precio;
+    item.appendChild(span);
+ 
+ item.addEventListener('click', ()=>{
+    let carritoLocalStorange = obtenerProductos();
+    console.log("carrito:" ,carritoLocalStorange);
+    
+    carritoLocalStorange.push({precio:precio,nombre:titulo, img:urlImg});
+    guardarProducto(carritoLocalStorange);
+    console.log("Producto en LocalStorange");
+    location.reload();
     });
 
     return item;

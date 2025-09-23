@@ -1,22 +1,52 @@
-.barra-nav {
-    display: flex;
+.nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 8rem;
+    border: 4px solid black;
     justify-content: space-between;
+    display: flex;
     align-items: center;
-    border: 4px solid rgb(0, 0, 0);
-    padding: 10px;
-    margin-top: 2rem;
-    border-radius: 5px;
-    background-color: rgb(197, 128, 128);
+    margin-top: 5rem;
+    background-color:  rgb(196, 125, 125);
+
+    z-index: 1000;
+}   
+
+.menu {
+    padding: 1.5rem;
+    font-size: 2rem;
+    border-radius: 25%;
+    margin: 2.5rem;
 }
 
-.boton-nav {
-    width: 50px;
-    height: 50px;
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 5px;
+.div-item {
+    width:  20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    top: 12px;
+    right: 27px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
-    cursor: pointer;
+    
 }
+
+@media (max-width: 768px) {
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  }
